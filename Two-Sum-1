@@ -1,0 +1,27 @@
+Input: nums = [3,2,4], target = 6
+Output: [1,2]
+
+var twoSum = function(nums, target) {
+    for(let i=0; i< nums.length; i++) {
+        for(let j=i+1; j< nums.length; j++) {   // if j=0, then nums[0] + nums[0] becomes true. used for skipping same number.
+            if(nums[i] + nums[j] == target) {
+                return [i, j]
+            }
+        }
+    }
+};
+
+/**
+Hash map
+var twoSum = function(nums, target) {
+    let map = new Map()
+    for(let i = 0; i < nums.length; i++) {
+        num1= nums[i]
+        num2 = target - num1
+        if(map.has(num2)) {
+            return [i, map.get(num2)]
+        }
+        map.set(num1, i)
+    }
+}
+ */
